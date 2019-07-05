@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--- Facebook and Twitter iontergration -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>logIn</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/shards.min.css">
+    <link rel="stylesheet" href="styles/example.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">    
+    <link rel="stylesheet" href="styles/app-loading.min.css?v=0.0.5">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+	<!-- Change the style sheets if they conflict, ngenzeka awami ehlhuphe awenu. Take mine and add the in "assets"-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/shards.min.css">
+    <link rel="stylesheet" href="styles/example.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">    
+    <link rel="stylesheet" href="styles/app-loading.min.css?v=0.0.5">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+	
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body {
+		font-family: 'Varela Round', sans-serif;
+	}
+	.modal-login {		
+		color: #636363;
+		width: 350px;
+	}
+	.modal-login .modal-content {
+		padding: 20px;
+		border-radius: 5px;
+		border: none;
+	}
+	.modal-login .modal-header {
+		border-bottom: none;   
+        position: relative;
+        justify-content: center;
+	}
+	.modal-login h4 {
+		text-align: center;
+		font-size: 26px;
+		margin: 30px 0 -15px;
+	}
+	.modal-login .form-control:focus {
+		border-color: #70c5c0;
+	}
+	.modal-login .form-control, .modal-login .btn {
+		min-height: 40px;
+		border-radius: 3px; 
+	}
+	.modal-login .close {
+        position: absolute;
+		top: -5px;
+		right: -5px;
+	}	
+	.modal-login .modal-footer {
+		background: #ecf0f1;
+		border-color: #dee4e7;
+		text-align: center;
+        justify-content: center;
+		margin: 0 -20px -20px;
+		border-radius: 5px;
+		font-size: 13px;
+	}
+	.modal-login .modal-footer a {
+		color: #999;
+	}		
+	.modal-login .avatar {
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: -70px;
+		width: 95px;
+		height: 95px;
+		border-radius: 50%;
+		z-index: 9;
+		background: #60c7c1;
+		padding: 15px;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+	}
+	.modal-login .avatar img {
+		width: 100%;
+	}
+	.modal-login.modal-dialog {
+		margin-top: 80px;
+	}
+    .modal-login .btn {
+        color: #fff;
+        border-radius: 4px;
+		background: #60c7c1;
+		text-decoration: none;
+		transition: all 0.4s;
+        line-height: normal;
+        border: none;
+    }
+	.modal-login .btn:hover, .modal-login .btn:focus {
+		background: #45aba6;
+		outline: none;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+</style>
+</head>
+<body>
+
+<!-- Modal HTML -->
+<!-- To do, the members login .js after yall test lempahla -->
+<div >
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="avatar">
+					<img src="pic/logo.png" alt="Avatar">
+				</div>				
+				<h4 class="modal-title">BSF Member Login</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form >
+					<div class="form-group">
+						<input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+					</div>        
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					</div>
+					<div class="text-center"> Create an account? <a href="test.html">Register</a></div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-12 col-sm-4 text-center mb-01">
+        <div class="card" style="margin-top : 16px">
+		   <div class="card-body">
+		   <h4><b>Google users</b></h4>
+		   <!-- Cela nimbuze iText ezoba klama headings i.e. h4,h5 etc -->
+		   <h6>To enjoy a world of royalties</h6>
+		   <br>
+		   <div class="input-group input-group-seamless"><span class="input-group-prepend"><span class="input-group-text"><i class="input-group-text"><i class="fa fa-user"></i>
+		    <div><small><font id="email_error" color="#c4183c"></font></smal></div>
+			<br>
+			<div class="input-group input-group-seamless">
+			    <font size="2" id="forgot_password" color="blue" style="padding: 3px"><b>Forgot Password?</b></font></a>
+				</div>
+				
+ <div><small><font id="password_error" color="#c4183c"></font></small></div>
+            <hr>
+            <h6>or continue using</h6>
+
+              <div id="gSignInWrapper">
+                <div id="customBtn" class="customGPlusSignIn">
+                  &nbsp;&nbsp;<span class="icon"><img src="./images/google.jpeg" width="38px" height="38px"></span>
+                  <span class="buttonText">Google</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 16px">
+                <font size="2">Not your computer? Use Guest mode to sign in privately.</font>
+              </div>
+
+              <div id="anonymousSignInWrapper" style="padding-top: 16px">
+                <div id="customBtn" class="customGPlusSignIn" onclick="signInViaGoogle()">
+                  &nbsp;&nbsp;<span class="icon"><img src="./images/anonymous.png" width="42px" height="38px"></span>
+                  <span class="buttonText">Anonymous</span>
+                </div>
+              </div>
+              <table>
+                <tr>
+                  <td width="195px" valign="bottom">
+                    <div class="text-center text-sm-left">
+                      <a href="signup.html"><h6><font color="#0071f7">Create Account</font></h6></a>
+                    </div>
+                  </td>
+                  <td width="195px">
+                    <div class="text-center text-sm-right" style="margin-top: 20px">
+                      <button type="button" class="btn btn-primary" id="next">Next</button>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+          </div>
+        </div>
+<!-- Doubt this will work 1st time -->
+    </div>
+    </center>
+
+    <div class="popup animated" id="shareable_link_popup" style="background: #4D4D4E;">
+      <div class="pp-inner-content">
+        <center>
+        <h6 id="upload_status_text"><font color="white">&nbsp;&nbsp;Email sent for password reset&nbsp;&nbsp;</font></h6>
+        </center>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/shards.min.js"></script>
+    <script src="scripts/app-loading.min.js?v=0.0.5"></script>
+    <script src="scripts/login.js"></script>			  
+</body>
+</html>                            
